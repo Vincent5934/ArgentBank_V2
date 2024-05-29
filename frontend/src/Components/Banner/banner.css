@@ -1,0 +1,24 @@
+.banner{
+    width:100%;
+    height:365px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        min-height: 120vh;
+    } 
+}
+
+@media screen and (max-width: 550px) {
+    .banner {
+        flex-direction: column;
+        min-height: 90vh;
+    } 
+}
+
+
+
