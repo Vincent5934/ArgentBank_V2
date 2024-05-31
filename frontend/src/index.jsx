@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import Profile from './Pages/Profile/Profile';
 import './index.css';
 import store from "./Store/Store"
+import Error from './Pages/Error/Error';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/error" element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>

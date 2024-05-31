@@ -178,6 +178,8 @@ paths:
             $ref: '#/definitions/TransactionCategory'
         '401': 
           description: Unauthorized user
+        '404':
+          description: Transaction not found
         '500': 
           description: Internal Servor Error
   /transactions/{transactionID}/note:
@@ -207,6 +209,8 @@ paths:
             $ref: '#/definitions/ModifyTransactionNote'
         '401':
           description: Unauthorized user
+        '404':
+          description: Transaction not found
         '500':
           description: Internal Server Error
 securityDefinitions:

@@ -1,4 +1,4 @@
-import "./card.css";
+import "./accountcard.css"
 
 const Card = ({ title, amount, description }) => {
   return (

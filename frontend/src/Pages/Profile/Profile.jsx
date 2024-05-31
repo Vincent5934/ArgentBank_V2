@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userSignIn } from "../../Store/UserSlice"
 import Form from "../../Components/Form/Form"
-import Card from "../../Components/Account/Card/Card";
+import AccountCard from "../../Components/AccountCard/AccountCard"
 import balance from "../../Data/balance.json";
 import "./profile.css";
 
@@ -34,14 +34,19 @@ const Profile = () => {
         console.log(error);
       }
     };
-    if (getUserData(sessionStorage.getItem("token"))) {
-      navigate("/profile");
-    }
-    else {
-      navigate("/")
-    }
-  }, [navigate, dispatch]
-  );
+ 
+  if (
+    !(
+      sessionStorage.getItem("token") 
+    )
+  ) {
+    navigate("/error");
+  } else {
+    sessionStorage.getItem("token")
+      getUserData(sessionStorage.getItem("token"))
+      
+  }
+}, [navigate, dispatch]);
 
   return (
     <div className="profileContainer">
@@ -64,7 +69,7 @@ const Profile = () => {
       </div>
       <div className="cardContainer">
         {balance.map((data) => (
-          <Card
+          <AccountCard
             key={data.id}
             title={data.title}
             amount={data.amount}

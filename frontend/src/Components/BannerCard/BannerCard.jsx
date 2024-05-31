@@ -1,4 +1,4 @@
-import "./card.css"
+import "./bannercard.css"
 
 const Card = ({ image, title, description }) => {
     return (
